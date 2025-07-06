@@ -1,0 +1,31 @@
+/*CREATE VIEW emp_with_avg_salary AS
+SELECT 
+    e.empno,
+    e.ename,
+    e.sal,
+    e.deptno,
+    d.dname,
+    d.loc,
+    (
+        SELECT AVG(sal) 
+        FROM emp e2 
+        WHERE e2.deptno = e.deptno
+    ) AS dept_avg_sal
+FROM emp e
+JOIN dept d ON e.deptno = d.deptno;*/
+/*
+CREATE VIEW emp_public_view AS
+SELECT 
+    empno,
+    ename,
+    job,
+    deptno
+FROM emp;*/
+
+/*SELECT * FROM emp_with_avg_salary;*/
+
+/*SELECT * FROM emp_public_view;*/
+
+
+
+
