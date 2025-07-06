@@ -1,0 +1,35 @@
+--SELECT 
+--  ename,
+--  sal,
+--  deptno,
+--  (SELECT AVG(sal) 
+--   FROM emp e2 
+--   WHERE e2.deptno = e1.deptno) AS dept_avg_sal
+--FROM emp e1;
+
+/*SELECT ename, sal
+FROM emp
+WHERE sal > (SELECT AVG(sal) FROM emp);*/
+
+SELECT d.dname, avg_dept.avg_sal
+FROM dept d
+JOIN (
+    SELECT deptno, AVG(sal) AS avg_sal
+    FROM emp
+    GROUP BY deptno
+) AS avg_dept
+ON d.deptno = avg_dept.deptno;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
